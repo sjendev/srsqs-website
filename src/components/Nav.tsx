@@ -4,6 +4,8 @@ import { siteData } from "@/data/siteData";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform, useSpring, Variants, BezierDefinition, Easing } from "framer-motion";
 
+const PREMIUM_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1] as const;
+
 export default function Nav() {
     const { scrollY } = useScroll();
     const [windowWidth, setWindowWidth] = useState(0);
@@ -63,7 +65,6 @@ export default function Nav() {
         ["rgba(255, 255, 255, 0.9)", "rgba(255, 255, 255, 0.7)"]
     );
 
-    const premiumEase: BezierDefinition = [0.16, 1, 0.3, 1];
     const duration = 0.5;
 
     const menuVariants: Variants = {
@@ -71,7 +72,7 @@ export default function Nav() {
             opacity: 0,
             y: 0,
             transition: {
-                duration: 0.2, // Faster exit to prevent ghosting
+                duration: 0.2,
                 ease: "easeOut"
             }
         },
@@ -80,7 +81,7 @@ export default function Nav() {
             y: 0,
             transition: {
                 duration: 0.4,
-                ease: premiumEase as Easing,
+                ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
                 staggerChildren: 0.04,
                 delayChildren: 0.1
             }
@@ -94,7 +95,7 @@ export default function Nav() {
             y: 0,
             transition: {
                 duration: 0.4,
-                ease: premiumEase as Easing
+                ease: [0.16, 1, 0.3, 1] as [number, number, number, number]
             }
         }
     };
@@ -107,20 +108,20 @@ export default function Nav() {
             animate={{
                 paddingTop: isMegaMenuVisible ? 0 : 8,
             }}
-            transition={{ duration, ease: premiumEase as Easing }}
+            transition={{ duration, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="fixed w-full z-50 flex justify-center px-0 pointer-events-none"
             onMouseLeave={() => setHoveredLink(null)}
         >
             <motion.nav
                 animate={{
                     width: isMegaMenuVisible ? "100%" : (isScrolled ? targetPillWidth : currentFullWidth),
-                    backgroundColor: isMegaMenuVisible ? "#FFFFFF" : "rgba(255, 255, 255, 0)", // Fade out white background faster on exit
+                    backgroundColor: isMegaMenuVisible ? "#FFFFFF" : "rgba(255, 255, 255, 0)",
                     y: isMegaMenuVisible ? 0 : undefined,
                 }}
                 transition={{
-                    duration: isMegaMenuVisible ? 0.5 : 0.4, // Slightly faster return duration
-                    ease: premiumEase as Easing,
-                    backgroundColor: { duration: isMegaMenuVisible ? 0.4 : 0.2 } // Fast background fade on exit
+                    duration: isMegaMenuVisible ? 0.5 : 0.4,
+                    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+                    backgroundColor: { duration: isMegaMenuVisible ? 0.4 : 0.2 }
                 }}
                 style={{
                     width: !isMegaMenuVisible ? scrollWidth : undefined,
@@ -139,21 +140,21 @@ export default function Nav() {
                         paddingLeft: isMegaMenuVisible ? 48 : 24,
                         paddingRight: isMegaMenuVisible ? 48 : 24,
                     }}
-                    transition={{ duration, ease: premiumEase as Easing }}
+                    transition={{ duration, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
                     className="flex items-center justify-between w-full mx-auto relative px-4"
                 >
                     <div className="relative flex items-center flex-shrink-0 w-[240px] h-16">
                         <a href="/" className="relative block w-full h-full">
                             <motion.img
                                 animate={{ opacity: isMegaMenuVisible ? 0 : 1 }}
-                                transition={{ duration: 0.4, ease: premiumEase as Easing }}
+                                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
                                 src={siteData.nav.logoLight}
                                 alt={siteData.nav.logo}
                                 className="absolute inset-y-0 left-0 h-16 w-auto object-contain"
                             />
                             <motion.img
                                 animate={{ opacity: isMegaMenuVisible ? 1 : 0 }}
-                                transition={{ duration: 0.4, ease: premiumEase as Easing }}
+                                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
                                 src={siteData.nav.logoDark}
                                 alt={siteData.nav.logo}
                                 className="absolute inset-y-0 left-0 h-16 w-auto object-contain"
@@ -196,7 +197,7 @@ export default function Nav() {
                                 color: "#FFFFFF"
                             }}
                             whileHover={{ backgroundColor: "#E03D00" }}
-                            transition={{ duration: 0.4, ease: premiumEase as Easing }}
+                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
                             className="px-8 py-3.5 rounded-sm text-[11px] font-bold uppercase tracking-widest flex-shrink-0 border-none shadow-none flex items-center gap-2 cursor-pointer"
                             href={siteData.nav.cta.href}
                         >
