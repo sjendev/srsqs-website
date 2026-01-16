@@ -5,7 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
 import { projects, categories } from "@/data/projects";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Easing } from "framer-motion";
 
 export default function ProjectsPage() {
     const [activeCategory, setActiveCategory] = useState("All");
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        transition={{ duration: 0.8, ease: "easeOut" as Easing }}
                         className="max-w-4xl space-y-4 pt-20"
                     >
                         <h1 className="text-white text-6xl md:text-8xl font-display font-semibold tracking-tighter uppercase">
@@ -41,7 +41,7 @@ export default function ProjectsPage() {
                         <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: 120 }}
-                            transition={{ delay: 0.5, duration: 0.8 }}
+                            transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" as Easing }}
                             className="h-1 bg-primary mx-auto mt-8"
                         ></motion.div>
                     </motion.div>
@@ -81,7 +81,7 @@ export default function ProjectsPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, scale: 0.95 }}
-                                    transition={{ duration: 0.5 }}
+                                    transition={{ duration: 0.5, ease: "easeOut" as Easing }}
                                     className="group flex flex-col gap-6"
                                 >
                                     <div className="relative overflow-hidden aspect-[4/5] bg-surface-dark border border-white/5 transition-all duration-700">

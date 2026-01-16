@@ -73,7 +73,7 @@ export default function Nav() {
             y: 0,
             transition: {
                 duration: 0.2,
-                ease: "easeOut"
+                ease: "easeOut" as Easing
             }
         },
         open: {

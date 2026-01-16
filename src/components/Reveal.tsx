@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useInView, useAnimation, Easing } from "framer-motion";
 
 interface Props {
     children: React.ReactNode;
@@ -44,7 +44,7 @@ export const RevealSimple = ({ children, delay = 0 }: Props) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay, ease: "easeOut" as Easing }}
         >
             {children}
         </motion.div>

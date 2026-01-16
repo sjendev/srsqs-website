@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { siteData } from "@/data/siteData";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform, Easing } from "framer-motion";
 
 export default function Process() {
     const { process } = siteData;
@@ -42,7 +42,7 @@ export default function Process() {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.6, ease: "easeOut" as Easing }}
                     >
                         <span className="text-gray-500 font-bold text-sm mb-4 block uppercase tracking-wide">{process.label}</span>
                         <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">{process.title}</h2>
@@ -86,7 +86,7 @@ function StepItem({ step, index, total, scrollYProgress }: { step: any, index: n
                 hidden: { opacity: 0.3, x: 10 },
                 visible: { opacity: 1, x: 0 }
             }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, ease: "easeOut" as Easing }}
         >
             <motion.span
                 className="absolute -left-[41px] bg-black border-[2px] w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold z-20"

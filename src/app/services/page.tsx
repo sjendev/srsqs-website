@@ -4,7 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
 import { RevealSimple } from "@/components/Reveal";
-import { motion } from "framer-motion";
+import { motion, Easing } from "framer-motion";
 
 const services = [
     {
@@ -80,7 +80,7 @@ export default function ServicesPage() {
                         <motion.div
                             initial={{ opacity: 0, scale: 1.1 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
+                            transition={{ duration: 1.5, ease: "easeOut" as Easing }}
                             className="absolute inset-0"
                         >
                             <div className="absolute inset-0 bg-primary/10 mix-blend-overlay z-10 pointer-events-none"></div>

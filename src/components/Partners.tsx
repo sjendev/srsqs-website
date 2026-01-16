@@ -2,7 +2,7 @@
 
 import { siteData } from "@/data/siteData";
 import { RevealSimple } from "./Reveal";
-import { motion } from "framer-motion";
+import { motion, Easing } from "framer-motion";
 
 export default function Partners() {
     const { partners } = siteData;
@@ -38,7 +38,7 @@ export default function Partners() {
                                     repeat: Infinity,
                                     repeatType: "loop",
                                     duration: 30,
-                                    ease: "linear",
+                                    ease: "linear" as Easing,
                                 },
                             }}
                         >
