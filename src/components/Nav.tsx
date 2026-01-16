@@ -11,6 +11,7 @@ export default function Nav() {
     const [windowWidth, setWindowWidth] = useState(0);
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const unsubscribe = scrollY.on("change", (latest) => {
@@ -20,7 +21,12 @@ export default function Nav() {
     }, [scrollY]);
 
     useEffect(() => {
-        const updateWidth = () => setWindowWidth(window.innerWidth);
+        const updateWidth = () => {
+            setWindowWidth(window.innerWidth);
+            if (window.innerWidth > 768) {
+                setIsMobileMenuOpen(false);
+            }
+        };
         updateWidth();
         window.addEventListener("resize", updateWidth);
         return () => window.removeEventListener("resize", updateWidth);
@@ -114,14 +120,14 @@ export default function Nav() {
         >
             <motion.nav
                 animate={{
-                    width: isMegaMenuVisible ? "100%" : (isScrolled ? targetPillWidth : currentFullWidth),
-                    backgroundColor: isMegaMenuVisible ? "#FFFFFF" : "rgba(255, 255, 255, 0)",
-                    y: isMegaMenuVisible ? 0 : undefined,
+                    width: isMegaMenuVisible || isMobileMenuOpen ? "100%" : (isScrolled ? targetPillWidth : currentFullWidth),
+                    backgroundColor: isMegaMenuVisible || isMobileMenuOpen ? "#FFFFFF" : "rgba(255, 255, 255, 0)",
+                    y: isMegaMenuVisible || isMobileMenuOpen ? 0 : undefined,
                 }}
                 transition={{
-                    duration: isMegaMenuVisible ? 0.5 : 0.4,
+                    duration: isMegaMenuVisible || isMobileMenuOpen ? 0.5 : 0.4,
                     ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
-                    backgroundColor: { duration: isMegaMenuVisible ? 0.4 : 0.2 }
+                    backgroundColor: { duration: isMegaMenuVisible || isMobileMenuOpen ? 0.4 : 0.2 }
                 }}
                 style={{
                     width: !isMegaMenuVisible ? scrollWidth : undefined,
@@ -136,9 +142,9 @@ export default function Nav() {
             >
                 <motion.div
                     animate={{
-                        height: isMegaMenuVisible ? 100 : 80,
-                        paddingLeft: isMegaMenuVisible ? 48 : 24,
-                        paddingRight: isMegaMenuVisible ? 48 : 24,
+                        height: isMegaMenuVisible || isMobileMenuOpen ? 100 : 80,
+                        paddingLeft: isMegaMenuVisible || isMobileMenuOpen ? 48 : 24,
+                        paddingRight: isMegaMenuVisible || isMobileMenuOpen ? 48 : 24,
                     }}
                     transition={{ duration, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
                     className="flex items-center justify-between w-full mx-auto relative px-4"
@@ -146,14 +152,14 @@ export default function Nav() {
                     <div className="relative flex items-center flex-shrink-0 w-[240px] h-16">
                         <a href="/" className="relative block w-full h-full">
                             <motion.img
-                                animate={{ opacity: isMegaMenuVisible ? 0 : 1 }}
+                                animate={{ opacity: isMegaMenuVisible || isMobileMenuOpen ? 0 : 1 }}
                                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
                                 src={siteData.nav.logoLight}
                                 alt={siteData.nav.logo}
                                 className="absolute inset-y-0 left-0 h-16 w-auto object-contain"
                             />
                             <motion.img
-                                animate={{ opacity: isMegaMenuVisible ? 1 : 0 }}
+                                animate={{ opacity: isMegaMenuVisible || isMobileMenuOpen ? 1 : 0 }}
                                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
                                 src={siteData.nav.logoDark}
                                 alt={siteData.nav.logo}
@@ -208,10 +214,13 @@ export default function Nav() {
 
                     <div className="md:hidden flex items-center">
                         <motion.button
-                            animate={{ color: isMegaMenuVisible ? "#000000" : "#FFFFFF" }}
-                            className="hover:text-primary focus:outline-none transition-colors"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            animate={{ color: isMegaMenuVisible || isMobileMenuOpen ? "#000000" : "#FFFFFF" }}
+                            className="hover:text-primary focus:outline-none transition-colors pointer-events-auto"
                         >
-                            <span className="material-symbols-outlined">menu</span>
+                            <span className="material-symbols-outlined">
+                                {isMobileMenuOpen ? "close" : "menu"}
+                            </span>
                         </motion.button>
                     </div>
                 </motion.div>
@@ -262,6 +271,49 @@ export default function Nav() {
                                         </motion.a>
                                     ))}
                                 </div>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+                <AnimatePresence>
+                    {isMobileMenuOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+                            className="w-full bg-white/95 backdrop-blur-xl overflow-hidden md:hidden border-t border-gray-100"
+                        >
+                            <div className="flex flex-col p-8 space-y-6">
+                                {siteData.nav.links.map((link, idx) => (
+                                    <motion.a
+                                        key={link.label}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: 0.1 * idx, duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+                                        href={link.href}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="text-2xl font-display font-medium text-black hover:text-primary transition-colors flex items-center justify-between"
+                                    >
+                                        {link.label}
+                                        <span className="material-symbols-outlined text-gray-300 text-sm">arrow_forward</span>
+                                    </motion.a>
+                                ))}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.4, duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+                                    className="pt-6"
+                                >
+                                    <a
+                                        href={siteData.nav.cta.href}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="w-full bg-primary text-white py-4 rounded-sm font-bold uppercase tracking-widest text-center flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+                                    >
+                                        {siteData.nav.cta.label}
+                                        <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
+                                </motion.div>
                             </div>
                         </motion.div>
                     )}
