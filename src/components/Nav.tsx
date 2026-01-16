@@ -2,7 +2,7 @@
 
 import { siteData } from "@/data/siteData";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useSpring, Variants } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring, Variants, BezierDefinition, Easing } from "framer-motion";
 
 export default function Nav() {
     const { scrollY } = useScroll();
@@ -63,7 +63,7 @@ export default function Nav() {
         ["rgba(255, 255, 255, 0.9)", "rgba(255, 255, 255, 0.7)"]
     );
 
-    const premiumEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
+    const premiumEase: BezierDefinition = [0.16, 1, 0.3, 1];
     const duration = 0.5;
 
     const menuVariants: Variants = {
@@ -80,7 +80,7 @@ export default function Nav() {
             y: 0,
             transition: {
                 duration: 0.4,
-                ease: premiumEase,
+                ease: premiumEase as Easing,
                 staggerChildren: 0.04,
                 delayChildren: 0.1
             }
@@ -94,7 +94,7 @@ export default function Nav() {
             y: 0,
             transition: {
                 duration: 0.4,
-                ease: premiumEase
+                ease: premiumEase as Easing
             }
         }
     };
@@ -107,7 +107,7 @@ export default function Nav() {
             animate={{
                 paddingTop: isMegaMenuVisible ? 0 : 8,
             }}
-            transition={{ duration, ease: premiumEase }}
+            transition={{ duration, ease: premiumEase as Easing }}
             className="fixed w-full z-50 flex justify-center px-0 pointer-events-none"
             onMouseLeave={() => setHoveredLink(null)}
         >
@@ -119,7 +119,7 @@ export default function Nav() {
                 }}
                 transition={{
                     duration: isMegaMenuVisible ? 0.5 : 0.4, // Slightly faster return duration
-                    ease: premiumEase,
+                    ease: premiumEase as Easing,
                     backgroundColor: { duration: isMegaMenuVisible ? 0.4 : 0.2 } // Fast background fade on exit
                 }}
                 style={{
@@ -139,7 +139,7 @@ export default function Nav() {
                         paddingLeft: isMegaMenuVisible ? 48 : 24,
                         paddingRight: isMegaMenuVisible ? 48 : 24,
                     }}
-                    transition={{ duration, ease: premiumEase }}
+                    transition={{ duration, ease: premiumEase as Easing }}
                     className="flex items-center justify-between w-full mx-auto relative px-4"
                 >
                     <div className="relative flex items-center flex-shrink-0 w-[240px] h-16">
