@@ -63,7 +63,7 @@ export default function Nav() {
         ["rgba(255, 255, 255, 0.9)", "rgba(255, 255, 255, 0.7)"]
     );
 
-    const premiumEase = [0.16, 1, 0.3, 1] as const;
+    const premiumEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
     const duration = 0.5;
 
     const menuVariants: Variants = {
