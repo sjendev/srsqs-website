@@ -146,14 +146,14 @@ export default function Nav() {
                         <a href="/" className="relative block w-full h-full">
                             <motion.img
                                 animate={{ opacity: isMegaMenuVisible ? 0 : 1 }}
-                                transition={{ duration: 0.4, ease: premiumEase }}
+                                transition={{ duration: 0.4, ease: premiumEase as Easing }}
                                 src={siteData.nav.logoLight}
                                 alt={siteData.nav.logo}
                                 className="absolute inset-y-0 left-0 h-16 w-auto object-contain"
                             />
                             <motion.img
                                 animate={{ opacity: isMegaMenuVisible ? 1 : 0 }}
-                                transition={{ duration: 0.4, ease: premiumEase }}
+                                transition={{ duration: 0.4, ease: premiumEase as Easing }}
                                 src={siteData.nav.logoDark}
                                 alt={siteData.nav.logo}
                                 className="absolute inset-y-0 left-0 h-16 w-auto object-contain"
@@ -196,7 +196,7 @@ export default function Nav() {
                                 color: "#FFFFFF"
                             }}
                             whileHover={{ backgroundColor: "#E03D00" }}
-                            transition={{ duration: 0.4, ease: premiumEase }}
+                            transition={{ duration: 0.4, ease: premiumEase as Easing }}
                             className="px-8 py-3.5 rounded-sm text-[11px] font-bold uppercase tracking-widest flex-shrink-0 border-none shadow-none flex items-center gap-2 cursor-pointer"
                             href={siteData.nav.cta.href}
                         >
