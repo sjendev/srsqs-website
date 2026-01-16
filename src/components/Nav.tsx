@@ -2,7 +2,7 @@
 
 import { siteData } from "@/data/siteData";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring, Variants } from "framer-motion";
 
 export default function Nav() {
     const { scrollY } = useScroll();
@@ -63,10 +63,10 @@ export default function Nav() {
         ["rgba(255, 255, 255, 0.9)", "rgba(255, 255, 255, 0.7)"]
     );
 
-    const premiumEase = [0.16, 1, 0.3, 1];
+    const premiumEase = [0.16, 1, 0.3, 1] as const;
     const duration = 0.5;
 
-    const menuVariants = {
+    const menuVariants: Variants = {
         closed: {
             opacity: 0,
             y: 0,
@@ -87,7 +87,7 @@ export default function Nav() {
         }
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         closed: { opacity: 0, y: 10 },
         open: {
             opacity: 1,
