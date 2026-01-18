@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteData } from "@/data/siteData";
 import { RevealSimple } from "./Reveal";
 
@@ -23,18 +24,20 @@ export default function Services() {
                     </div>
                     <div className="space-y-6">
                         {services.items.map((service, idx) => (
-                            <RevealSimple key={service.id} delay={0.1 * idx + 0.4}>
-                                <div className="group border-b border-gray-100 pb-6 cursor-pointer hover:border-primary transition-colors">
-                                    <div className="flex justify-between items-center mb-4">
-                                        <div className="flex items-center gap-4">
-                                            <span className="text-gray-300 font-mono text-sm">{service.id}</span>
-                                            <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{service.title}</h3>
+                            <Link key={service.id} href="/services">
+                                <RevealSimple delay={0.1 * idx + 0.4}>
+                                    <div className="group border-b border-gray-100 pb-6 mb-6 cursor-pointer hover:border-primary transition-colors">
+                                        <div className="flex justify-between items-center mb-4">
+                                            <div className="flex items-center gap-4">
+                                                <span className="text-gray-300 font-mono text-sm">{service.id}</span>
+                                                <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{service.title}</h3>
+                                            </div>
+                                            <span className="material-symbols-outlined text-gray-400 group-hover:translate-x-2 transition-transform">arrow_forward</span>
                                         </div>
-                                        <span className="material-symbols-outlined text-gray-400 group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                                        <p className="text-muted-light text-sm pl-9 max-w-md">{service.description}</p>
                                     </div>
-                                    <p className="text-muted-light text-sm pl-9 max-w-md">{service.description}</p>
-                                </div>
-                            </RevealSimple>
+                                </RevealSimple>
+                            </Link>
                         ))}
                     </div>
                 </div>

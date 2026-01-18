@@ -9,6 +9,15 @@ export default function Hero() {
 
     return (
         <header className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-black text-white">
+            {/* Watermark Logo */}
+            <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.20] grayscale pointer-events-none select-none">
+                <img
+                    alt=""
+                    className="w-[80vw] h-auto object-contain max-h-[80vh]"
+                    src={siteData.nav.logoLight}
+                />
+            </div>
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div>

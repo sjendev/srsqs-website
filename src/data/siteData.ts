@@ -36,21 +36,21 @@ export const siteData = {
                     {
                         title: "Quantity Surveying",
                         category: "Cost Management",
-                        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDgFcM4sXIYTNxPT7tvRrboNbosNh8YD8BtlhKbQZD9mj_Os37U_Ss9nkRY0mFZ9l5TLBqwFQW2IwCoUPL8wIpuFPnYk8T1XixleRDBA_YPrn_Ti2TOZqRMdSGRna5wtFdQJzP3BLWPvtbdnTpKcq7jUJCxDBE-vCRnnB4oEXwVxvXg0Fz0ZyRKVVLRHSkJY8GzYN2Yl28JD1sF3QVUGupad_jUcPxKYO4WbSPMeJ90w2e5knK7XZXq-4BEu1GZK5y3seRsG3F64qM",
+                        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBDHZDLaDqS6hq4kGtZZhKXYqFJ5s9eHU3B1K_qquAT0aj2aOStvCFkfKEi9bHpG5R2kJ6pWvIPx1VdYcfoXUOCTrvKfJi39fYOrS3r0RzvK064ehJFMrga_F3h8_wj0Vxk_zM2Ahxcquf8_TeiJYxsnxBb935UQYlJEaJbKPPI6UojNxY7b_uIoxhv_5cCEuMfQF0b6AFFLEAuYlt_Q3QymzwqW_Xx7o-neDA58WyT98fFa-5GmxyuXB7DShXQ2Pz8YxAtRm-CP9c",
                         cta: "Explore Service",
                         href: "/services"
                     },
                     {
                         title: "Architecture",
                         category: "Design & Planning",
-                        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA2EbR6fQXZJvEO7NcweoF1B8zjqrfz15M6bqr2ciUI_uWVO5nk71WyS-Qu29kYOEsmIqTnaWtWmq5D3c4idKRlpafV6iHHiIq5UBva2OmP1OmDzj8hA0qNKL37nkgc84s3fatRjatYjyXyLqVO3Izc7k9pMnG4L6pMgBCbPV0rcTJSQZCRPzgqX9EjNN0bM-RCKCvqWhgnndh1FiNfVmWDuLVypDfBU6PVoWHzahn7u2MqAtFfmUeGjoOdhyMehcZJwkgOJbiJd30",
+                        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDgAzqYynHzBcN08bTCafShkZ7m2Pr_U7zNbYIRzmiJEGQeeMafvUGtMrWIqITz9Q1PkSOYzkTovg4sI6y0HaeM_EgRYWDfWBEXnY1JBXvc1fOJpPI4Mkdj_akemPOP-9dDGoV5NAvVvCFzS07aYKi1CKs9evNXj6pswAr4uEPYnX6a6U0z3QFGxtY9Xon2AL2tkIDUfz-_ti4v5K6gxgmq_TuriUxOQ_5aGx7GDfiRlrZrpRLwWndM1--YkaXw0OJC3F0XJpdlyqc",
                         cta: "Explore Service",
                         href: "/services"
                     },
                     {
                         title: "Engineering",
                         category: "Structural & Civil",
-                        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC4zSUlrVs5aOJ5_yDtMiBiP_9a9nbXcmktMOXbY3VDFtnM2r641LZvvwSlu7fM2NM6NM_PARk2A0yMxVvp4Qyig2cFHmGr2iZm0bUgN1kJyRKGEnqrw_J8yi2ZHwrT57hlsyHH7_PywtTCYYHr8l9nrm3RgflAi_zHutnSmANDv9uUXn394diGk0-zF5cepO6rpbNrgrPAx-Sfu7trjCAmISVGVykBxPXQOSxXY6EigRXsYb9trulzU5ZKNwYnHSjeHM9-nZbQAe4",
+                        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDgFcM4sXIYTNxPT7tvRrboNbosNh8YD8BtlhKbQZD9mj_Os37U_Ss9nkRY0mFZ9l5TLBqwFQW2IwCoUPL8wIpuFPnYk8T1XixleRDBA_YPrn_Ti2TOZqRMdSGRna5wtFdQJzP3BLWPvtbdnTpKcq7jUJCxDBE-vCRnnB4oEXwVxvXg0Fz0ZyRKVVLRHSkJY8GzYN2Yl28JD1sF3QVUGupad_jUcPxKYO4WbSPMeJ90w2e5knK7XZXq-4BEu1GZK5y3seRsG3F64qM",
                         cta: "Explore Service",
                         href: "/services"
                     }
@@ -68,7 +68,7 @@ export const siteData = {
         },
         description: "In the complex landscape of modern construction, SRSQS delivers rigorous cost management and strategic financial planning. We ensure your vision is built on a foundation of commercial viability.",
         ctas: [
-            { label: "Make a Call", href: "#", primary: true, icon: "arrow_forward" },
+            { label: "Work with Us", href: "#", primary: true, icon: "arrow_forward" },
             { label: "Explore Our Work", href: "/projects", primary: false },
         ],
         trust: "Trusted by 100+ Developers",
@@ -140,10 +140,11 @@ export const siteData = {
         title: "Expertise that performs",
         description: "Every construction project is unique. That's why we develop tailored cost solutions built on market insight and engineering data. Our multidisciplinary approach protects your investment at every stage.",
         items: [
-            { id: "01", title: "Feasibility Studies", description: "Early-stage financial analysis to determine project viability and investment potential." },
-            { id: "02", title: "Bill of Quantities (BoQ)", description: "Comprehensive itemized lists of materials, parts, and labor for accurate tendering." },
-            { id: "03", title: "Contract Administration", description: "Managing contracts between employers and contractors to ensure compliance and fair play." },
-            { id: "04", title: "Dispute Resolution", description: "Expert guidance and mediation to resolve commercial conflicts and claims efficiently." },
+            { id: "01", title: "Quantity Surveying", description: "Precision in cost management from feasibility to final account, ensuring project viability." },
+            { id: "02", title: "Architecture", description: "Innovative spatial design merging aesthetics with structural functionality and commercial reality." },
+            { id: "03", title: "Engineering", description: "Technical excellence in structural and civil design for robust and efficient built solutions." },
+            { id: "04", title: "Project Management", description: "Strategy and oversight to ensure timelines, budgets, and quality standards are exceeded." },
+            { id: "05", title: "OHS Consultancy", description: "Comprehensive health and safety compliance to protect your most valuable assets." },
         ],
     },
     projects: {
