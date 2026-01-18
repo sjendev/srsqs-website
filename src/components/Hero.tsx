@@ -70,7 +70,7 @@ export default function Hero() {
                                 <div className="aspect-[3/4] overflow-hidden relative group">
                                     <img
                                         alt="Architectural Blueprints"
-                                        className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 opacity-90"
+                                        className="object-cover w-full h-full opacity-90"
                                         src={hero.images[0]}
                                     />
                                 </div>
@@ -79,7 +79,7 @@ export default function Hero() {
                                 <div className="aspect-square overflow-hidden relative group">
                                     <img
                                         alt="Construction Site Detail"
-                                        className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 opacity-90"
+                                        className="object-cover w-full h-full opacity-90"
                                         src={hero.images[1]}
                                     />
                                 </div>
@@ -90,7 +90,7 @@ export default function Hero() {
                                 <div className="aspect-square overflow-hidden relative group">
                                     <img
                                         alt="Financial Planning Meeting"
-                                        className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 opacity-90"
+                                        className="object-cover w-full h-full opacity-90"
                                         src={hero.images[2]}
                                     />
                                 </div>
@@ -99,7 +99,7 @@ export default function Hero() {
                                 <div className="aspect-[3/4] overflow-hidden relative group">
                                     <img
                                         alt="Commercial Building Site"
-                                        className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 opacity-90"
+                                        className="object-cover w-full h-full opacity-90"
                                         src={hero.images[3]}
                                     />
                                 </div>

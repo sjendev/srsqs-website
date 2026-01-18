@@ -82,11 +82,18 @@ export const siteData = {
     partners: {
         title: "Trusted by industry leaders",
         items: [
-            { name: "ApexConstruct", icon: "foundation" },
-            { name: "ADCM", text: "ADCM" },
-            { name: "StructureX", icon: "domain" },
-            { name: "BuildWright", icon: "engineering" },
-            { name: "Urban Form", icon: "apartment" },
+            { name: "City of Ekurhuleni", image: "/clients/ekurhuleni.png" },
+            { name: "PURCO SA", image: "/clients/purco.png" },
+            { name: "Foskor", image: "/clients/foskor.png" },
+            { name: "PRASA", image: "/clients/prasa.png" },
+            { name: "CSIR", image: "/clients/csir.png" },
+            { name: "Amazwi", image: "/clients/amazwi.png" },
+            { name: "Coega", image: "/clients/coega.png" },
+            { name: "National Lotteries Commission", image: "/clients/nlc.png" },
+            { name: "Transnet", image: "/clients/transnet.png" },
+            { name: "Independent Development Trust", image: "/clients/idt.png" },
+            { name: "Rand Water", image: "/clients/randwater.png" },
+            { name: "Department of Public Works", image: "/clients/public-works.png" },
         ],
     },
     consultancy: {

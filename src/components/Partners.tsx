@@ -42,17 +42,24 @@ export default function Partners() {
                                 },
                             }}
                         >
-                            {marqueeItems.map((partner, idx) => (
+                            {marqueeItems.map((partner: any, idx) => (
                                 <div
                                     key={`${partner.name}-${idx}`}
-                                    className="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer group flex-shrink-0"
+                                    className="flex items-center gap-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer group flex-shrink-0"
                                 >
-                                    {partner.icon ? (
+                                    {partner.image ? (
+                                        <div className="h-10 w-auto relative">
+                                            <img
+                                                src={partner.image}
+                                                alt={partner.name}
+                                                className="h-full w-auto object-contain"
+                                            />
+                                        </div>
+                                    ) : partner.icon ? (
                                         <span className="material-symbols-outlined text-2xl text-gray-500 group-hover:text-primary transition-colors">{partner.icon}</span>
                                     ) : (
                                         <span className="text-sm font-black tracking-widest text-gray-500 group-hover:text-primary transition-colors">{partner.text}</span>
                                     )}
-                                    <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-600 group-hover:text-white transition-colors">{partner.name}</span>
                                 </div>
                             ))}
                         </motion.div>
