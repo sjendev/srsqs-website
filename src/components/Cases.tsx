@@ -20,7 +20,7 @@ export default function Cases() {
                         </RevealSimple>
                     </div>
                     <RevealSimple delay={0.4}>
-                        <a className="hidden md:inline-flex bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary-hover transition-all" href="#">
+                        <a className="hidden md:inline-flex bg-primary text-white px-6 py-3 rounded-none text-sm font-semibold hover:bg-primary-hover transition-all" href="#">
                             {projects.cta}
                         </a>
                     </RevealSimple>
@@ -50,7 +50,7 @@ export default function Cases() {
                                             </span>
                                         ))}
                                     </div>
-                                    <div className="w-full bg-primary h-12 flex items-center justify-between px-6 rounded text-white font-semibold text-sm hover:bg-primary-hover transition-colors">
+                                    <div className="w-full bg-primary h-12 flex items-center justify-between px-6 rounded-none text-white font-semibold text-sm hover:bg-primary-hover transition-colors">
                                         See Work <span className="material-symbols-outlined text-sm">arrow_forward</span>
                                     </div>
                                 </div>

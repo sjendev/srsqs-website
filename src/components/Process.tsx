@@ -47,7 +47,7 @@ export default function Process() {
                         <span className="text-gray-500 font-bold text-sm mb-4 block uppercase tracking-wide">{process.label}</span>
                         <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">{process.title}</h2>
                         <p className="text-gray-400 mb-8 leading-relaxed max-w-md">{process.description}</p>
-                        <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-full font-semibold transition-all">
+                        <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-none font-semibold transition-all">
                             {process.cta}
                         </button>
                     </motion.div>

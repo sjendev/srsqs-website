@@ -18,7 +18,7 @@ export default function WhatOthersMiss() {
                     </div>
                     <div className="flex items-end justify-start lg:justify-end">
                         <RevealSimple delay={0.3}>
-                            <a className="bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg shadow-primary/30" href="#">
+                            <a className="bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-none font-semibold transition-all shadow-lg shadow-primary/30" href="#">
                                 {whatOthersMiss.cta}
                             </a>
                         </RevealSimple>
@@ -29,10 +29,10 @@ export default function WhatOthersMiss() {
                         <RevealSimple key={idx} delay={0.1 * idx + 0.4}>
                             <div
                                 className={`p-8 rounded-2xl border transition-colors group h-full flex flex-col justify-between ${card.type === "plan"
-                                        ? "bg-surface-light border-gray-200 hover:border-primary/50"
-                                        : card.type === "procure"
-                                            ? "bg-primary border-primary text-white relative overflow-hidden"
-                                            : "bg-black text-white border-gray-800 hover:border-gray-600"
+                                    ? "bg-surface-light border-gray-200 hover:border-primary/50"
+                                    : card.type === "procure"
+                                        ? "bg-primary border-primary text-white relative overflow-hidden"
+                                        : "bg-black text-white border-gray-800 hover:border-gray-600"
                                     }`}
                             >
                                 {card.type === "procure" && <div className="absolute inset-0 bg-gradient-to-br from-primary to-orange-700 opacity-50 z-0"></div>}
