@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
@@ -23,7 +24,7 @@ export default function ProjectsPage() {
                 <div
                     className="w-full min-h-[600px] lg:min-h-[800px] flex flex-col items-center justify-center p-12 bg-cover bg-center text-center relative overflow-hidden"
                     style={{
-                        backgroundImage: `linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.85)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9dbot6ahrv5oNxOb6wbSvd-qZ-TxFhEXWB8Mxpk3YHeklvRw1QwHhMTTujdIMqDprtNqLMYKKXCPOZeElAb9ut5rFxazWWFjija-SWJyQbQqPjrdeGHmc9-ZDJ2JKX6mLoaY-PHcyOTaVvSsMPkZj8QAvJisZ1evSXgDS-iJDq_r7MwzICtPHWj7VMS6-UOOotcWjEzLVZlJyyPXvZn1g5M2FXEgfVyc8IJ1wVT0dOmheW74_0TJGrKy5kHMYB_E98zkIl3e_c2o")`
+                        backgroundImage: `linear-gradient(rgba(36, 36, 36, 0.7), rgba(36, 36, 36, 0.85)), url("/projects-hero.webp")`
                     }}
                 >
                     <motion.div
@@ -45,24 +46,6 @@ export default function ProjectsPage() {
                             className="h-1 bg-primary mx-auto mt-8"
                         ></motion.div>
                     </motion.div>
-                </div>
-            </section>
-
-            {/* Filter Section */}
-            <section className="bg-background-dark py-12 px-6 lg:px-20 border-b border-white/5">
-                <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-3">
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => setActiveCategory(category)}
-                            className={`px-8 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] border transition-all duration-300 ${activeCategory === category
-                                ? "bg-primary text-white border-primary"
-                                : "text-slate-500 bg-surface-dark/50 border-white/10 hover:border-primary hover:text-primary"
-                                }`}
-                        >
-                            {category}
-                        </button>
-                    ))}
                 </div>
             </section>
 
@@ -89,25 +72,12 @@ export default function ProjectsPage() {
                                             className="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
                                             style={{ backgroundImage: `url("${project.image}")` }}
                                         ></div>
-                                        <div className="absolute top-6 left-6">
-                                            <span className="bg-primary text-white text-[10px] font-semibold uppercase px-3 py-1.5 tracking-widest">
-                                                {project.category}
-                                            </span>
-                                        </div>
                                     </div>
-                                    <div className="flex justify-between items-start px-2">
-                                        <div>
-                                            <h3 className="text-xl font-semibold text-white group-hover:text-primary transition-colors uppercase tracking-tight font-display">
-                                                {project.title}
-                                            </h3>
-                                            <p className="text-slate-500 text-sm font-medium font-body mt-1">
-                                                {project.location}
-                                            </p>
+                                    <Link href={project.href || "/projects"} className="px-2">
+                                        <div className="w-full bg-primary h-12 flex items-center justify-between px-6 rounded-none text-white font-semibold text-sm hover:bg-primary-hover transition-colors cursor-pointer">
+                                            View Project <span className="material-symbols-outlined text-sm">arrow_forward</span>
                                         </div>
-                                        <span className="text-slate-700 font-semibold text-lg font-display">
-                                            {project.year}
-                                        </span>
-                                    </div>
+                                    </Link>
                                 </motion.div>
                             ))}
                         </AnimatePresence>

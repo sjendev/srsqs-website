@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteData } from "@/data/siteData";
 import { RevealSimple } from "./Reveal";
 
@@ -28,33 +29,17 @@ export default function Cases() {
                 <div className="grid md:grid-cols-2 gap-8">
                     {projects.items.map((item, idx) => (
                         <RevealSimple key={idx} delay={0.1 * idx + 0.5}>
-                            <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer">
-                                <img alt={item.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" src={item.image} />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-                                <div className="absolute top-6 left-6">
-                                    <span className="bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded text-xs uppercase tracking-wide border border-white/20">
-                                        {item.tag}
-                                    </span>
-                                </div>
-                                <div className="absolute bottom-0 left-0 right-0 p-8">
-                                    <div className="mb-4">
-                                        <div className="text-white font-bold text-xl mb-2 flex items-center gap-2">
-                                            <div className="w-6 h-6 bg-primary rounded-full"></div> {item.title}
+                            <Link href={item.href || "/projects"}>
+                                <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer">
+                                    <img alt={item.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" src={item.image} />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/40 to-transparent"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-8 pt-0">
+                                        <div className="w-full bg-primary h-12 flex items-center justify-between px-6 rounded-none text-white font-semibold text-sm hover:bg-primary-hover transition-colors">
+                                            View Project <span className="material-symbols-outlined text-sm">arrow_forward</span>
                                         </div>
                                     </div>
-                                    <h3 className="text-white text-2xl font-bold mb-4">{item.shortDesc}</h3>
-                                    <div className="flex gap-2 flex-wrap mb-6">
-                                        {item.categories.map((cat) => (
-                                            <span key={cat} className="text-xs text-white/70 border border-white/20 px-2 py-1 rounded">
-                                                {cat}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <div className="w-full bg-primary h-12 flex items-center justify-between px-6 rounded-none text-white font-semibold text-sm hover:bg-primary-hover transition-colors">
-                                        See Work <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         </RevealSimple>
                     ))}
                 </div>

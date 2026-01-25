@@ -50,7 +50,7 @@ export default function Nav() {
     const scrollBg = useTransform(
         smoothScroll,
         [0, 100],
-        ["rgba(20, 20, 20, 0)", "rgba(20, 20, 20, 0.5)"]
+        ["rgba(36, 36, 36, 0)", "rgba(36, 36, 36, 0.5)"]
     );
     const scrollBlur = useTransform(
         smoothScroll,
@@ -241,10 +241,15 @@ export default function Nav() {
                                         {siteData.nav.megaMenu?.[hoveredLink as keyof typeof siteData.nav.megaMenu]?.title}
                                     </motion.h2>
                                     <motion.div variants={itemVariants} className="flex items-center gap-6">
-                                        {hoveredLink === "Projects" && (
-                                            <span className="text-xs uppercase tracking-widest text-gray-500">Explore All Projects</span>
+                                        {siteData.nav.megaMenu?.[hoveredLink as keyof typeof siteData.nav.megaMenu]?.linkAll && (
+                                            <a
+                                                href={siteData.nav.megaMenu[hoveredLink as keyof typeof siteData.nav.megaMenu].linkAll.href}
+                                                className="text-xs uppercase tracking-widest text-gray-500 hover:text-primary transition-colors flex items-center gap-2"
+                                            >
+                                                {siteData.nav.megaMenu[hoveredLink as keyof typeof siteData.nav.megaMenu].linkAll.label}
+                                                <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                                            </a>
                                         )}
-                                        <span className="material-symbols-outlined text-gray-400">more_horiz</span>
                                     </motion.div>
                                 </div>
                                 <div className="grid grid-cols-3 gap-8">
@@ -266,8 +271,10 @@ export default function Nav() {
                                                     </span>
                                                 </div>
                                             </div>
-                                            <h3 className="text-2xl font-medium text-black mb-1 group-hover:text-primary transition-colors duration-300">{item.title}</h3>
-                                            <p className="text-[11px] text-gray-400 font-bold uppercase tracking-[0.1em]">{item.category}</p>
+                                            <div className="space-y-1">
+                                                <h3 className="text-xl font-display font-medium text-black group-hover:text-primary transition-colors">{item.title}</h3>
+                                                <p className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold">{item.category}</p>
+                                            </div>
                                         </motion.a>
                                     ))}
                                 </div>

@@ -15,7 +15,7 @@ export default function AboutPage() {
             {/* Hero Section */}
             <header className="relative min-h-[80vh] flex items-center justify-center pt-20 overflow-hidden bg-background-dark">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-background-dark"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-background-dark/60 via-background-dark/80 to-background-dark"></div>
                     <img
                         alt="Engineering background"
                         className="w-full h-full object-cover opacity-30"
@@ -177,7 +177,7 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <RevealSimple delay={0.3}>
-                            <div className="bg-black/40 border border-white/5 p-4 flex items-center justify-center h-full">
+                            <div className="bg-background-dark/40 border border-white/5 p-4 flex items-center justify-center h-full">
                                 <img
                                     alt="Engineering Schematic"
                                     className="w-full h-auto opacity-40 grayscale"

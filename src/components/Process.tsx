@@ -22,7 +22,7 @@ export default function Process() {
     });
 
     return (
-        <section className="py-24 bg-black text-white relative overflow-hidden">
+        <section className="py-24 bg-background-dark text-white relative overflow-hidden">
             {/* Background Image/Overlay */}
             <div
                 className="absolute inset-0 opacity-10"
@@ -89,7 +89,7 @@ function StepItem({ step, index, total, scrollYProgress }: { step: any, index: n
             transition={{ duration: 0.5, ease: "easeOut" as Easing }}
         >
             <motion.span
-                className="absolute -left-[41px] bg-black border-[2px] w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold z-20"
+                className="absolute -left-[41px] bg-background-dark border-[2px] w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold z-20"
                 style={{
                     borderColor: useTransform(scrollYProgress,
                         [threshold - 0.1, threshold, threshold + 0.1],

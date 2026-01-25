@@ -32,7 +32,7 @@ export default function WhatOthersMiss() {
                                     ? "bg-surface-light border-gray-200 hover:border-primary/50"
                                     : card.type === "procure"
                                         ? "bg-primary border-primary text-white relative overflow-hidden"
-                                        : "bg-black text-white border-gray-800 hover:border-gray-600"
+                                        : "bg-background-dark text-white border-gray-800 hover:border-gray-600"
                                     }`}
                             >
                                 {card.type === "procure" && <div className="absolute inset-0 bg-gradient-to-br from-primary to-orange-700 opacity-50 z-0"></div>}

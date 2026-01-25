@@ -3,14 +3,16 @@
 import { siteData } from "@/data/siteData";
 import { motion } from "framer-motion";
 import { RevealSimple } from "./Reveal";
+import MeshBackground from "./MeshBackground";
 
 export default function Hero() {
     const { hero } = siteData;
 
     return (
-        <header className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-black text-white">
+        <header className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-background-dark text-white">
+            <MeshBackground />
             {/* Watermark Logo */}
-            <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.20] grayscale pointer-events-none select-none">
+            <div className="absolute inset-0 z-10 flex items-center justify-center opacity-[0.20] grayscale pointer-events-none select-none">
                 <img
                     alt=""
                     className="w-[80vw] h-auto object-contain max-h-[80vh]"
@@ -18,7 +20,7 @@ export default function Hero() {
                 />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
                         <RevealSimple delay={0.1}>
@@ -119,6 +121,6 @@ export default function Hero() {
                 </div>
             </div>
 
-        </header>
+        </header >
     );
 }

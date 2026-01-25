@@ -8,7 +8,7 @@ export const aboutData = {
             { label: "Our Services", href: "/services" },
             { label: "Contact Our Team", href: "#contact" },
         ],
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBa6xSDE44kIxLD0fYYJXnJ7TcfWzjc-Aq1jqqzSFLS9s2QraCRQKLTOJmr3GIRJlgvuiXf_rKOxGpOYOHipqukxlW-LZRT3fv8m5R_fp9hy59wD2m9PDCS2NYdO25AX7TgLFTvmzJj8GBusMgK5PnaxkAKIgUz_j-zbXFy2reW8zIHGIJ7UDJWFIn8GQBZJ0YFDriYgXs5L-Dq5e2mevHCqJzYXU-YG6ChjgFNsw3xARKKLhANWKfmEtI7jlAYEyi6jH03MnMfPpE"
+        image: "/about-hero.webp"
     },
     excellence: {
         title: "Engineering Excellence Since 2012",
@@ -56,7 +56,9 @@ export const aboutData = {
         items: [
             { icon: "calculate", title: "Quantity Surveying", description: "Cost management and financial auditing for complex construction projects." },
             { icon: "architecture", title: "Architecture", description: "Innovative spatial design merging aesthetics with structural functionality." },
-            { icon: "engineering", title: "Civil & Structural Engineering", description: "The backbone of our consultancy, providing robust technical foundations." },
+            { icon: "engineering", title: "Civil and Structural Engineering", description: "The backbone of our consultancy, providing robust technical foundations." },
+            { icon: "bolt", title: "Electrical Engineering", description: "Power systems design and implementation for modern infrastructure." },
+            { icon: "settings", title: "Mechanical Engineering", description: "Complex climate control and piping systems for industrial and commercial use." },
             { icon: "assignment", title: "Project Management", description: "Strategic oversight to ensure timelines, budgets, and quality standards." },
             { icon: "description", title: "Contract Administration", description: "Managing legal and contractual obligations for project risk mitigation." },
             { icon: "health_and_safety", title: "OHS Consultancy", description: "Comprehensive occupational health and safety compliance management." }
