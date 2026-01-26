@@ -25,7 +25,7 @@ export default function Hero() {
                     <img
                         src="/hero-services.png"
                         alt="Services"
-                        className="h-5 w-auto object-contain opacity-80 mb-12 mx-auto block"
+                        className="h-7 w-auto object-contain opacity-80 mb-12 mx-auto block"
                     />
                 </RevealSimple>
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
