@@ -64,17 +64,8 @@ export default function ServicesPage() {
             <Nav />
 
             {/* Hero Section */}
-            <header className="relative min-h-screen flex flex-col overflow-hidden bg-background-dark pt-20">
-                <div className="w-full px-4 sm:px-12 lg:px-24 mb-8">
-                    <RevealSimple delay={0.5}>
-                        <img
-                            src="/hero-services.png"
-                            alt="Services"
-                            className="h-4 w-auto object-contain opacity-80"
-                        />
-                    </RevealSimple>
-                </div>
-                <div className="flex flex-col lg:flex-row w-full flex-grow">
+            <header className="relative min-h-screen flex items-stretch overflow-hidden bg-background-dark pt-20">
+                <div className="flex flex-col lg:flex-row w-full">
                     <div className="w-full lg:w-1/2 flex items-center px-4 sm:px-12 lg:px-24 py-32 lg:py-0 relative z-10">
                         <div className="max-w-xl">
                             <RevealSimple delay={0.1}>

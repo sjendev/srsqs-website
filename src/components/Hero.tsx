@@ -21,6 +21,13 @@ export default function Hero() {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+                <RevealSimple delay={0.1}>
+                    <img
+                        src="/hero-services.png"
+                        alt="Services"
+                        className="h-4 w-auto object-contain opacity-80 mb-12"
+                    />
+                </RevealSimple>
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
                         <RevealSimple delay={0.1}>
