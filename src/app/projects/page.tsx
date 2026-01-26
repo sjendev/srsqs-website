@@ -67,17 +67,21 @@ export default function ProjectsPage() {
                                     transition={{ duration: 0.5, ease: "easeOut" as Easing }}
                                     className="group flex flex-col gap-6"
                                 >
-                                    <div className="relative overflow-hidden aspect-[4/5] bg-surface-dark border border-white/5 transition-all duration-700">
+                                    <div className="relative overflow-hidden aspect-[4/5] bg-surface-dark border border-white/5 transition-all duration-700 group">
                                         <div
                                             className="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
                                             style={{ backgroundImage: `url("${project.image}")` }}
                                         ></div>
-                                    </div>
-                                    <Link href={project.href || "/projects"} className="px-2">
-                                        <div className="w-full bg-primary h-12 flex items-center justify-between px-6 rounded-none text-white font-semibold text-sm hover:bg-primary-hover transition-colors cursor-pointer">
-                                            View Project <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                                        {/* Bottom Button Overlay */}
+                                        <div className="absolute inset-x-0 bottom-0 p-6 z-30">
+                                            <Link href={project.href || "/projects"} className="w-full block">
+                                                <div className="w-full bg-primary h-12 flex items-center justify-between px-6 rounded-none text-white font-semibold text-sm hover:bg-primary-hover transition-colors cursor-pointer shadow-2xl">
+                                                    View Project <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                                                </div>
+                                            </Link>
                                         </div>
-                                    </Link>
+                                        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-20"></div>
+                                    </div>
                                 </motion.div>
                             ))}
                         </AnimatePresence>
