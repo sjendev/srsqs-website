@@ -39,7 +39,7 @@ const services = [
         tag: "The Flow",
         title: "Mechanical Engineering",
         description: "Optimizing building performance. Our mechanical engineering services cover the vital systems that make a building habitable and efficient. We specialize in HVAC, fire protection, and complex vertical transportation, integrating seamless mechanical solutions into every structure.",
-        image: "/services/mechanical.webp",
+        image: "/services/mechanical.jpg",
         reversed: false
     },
     {
