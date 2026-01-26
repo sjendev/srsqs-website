@@ -32,7 +32,7 @@ const services = [
         tag: "The Power",
         title: "Electrical Engineering",
         description: "Powering modern infrastructure. We design and implement sophisticated electrical systems that ensure reliability and efficiency. From power distribution and lighting design to specialized building management systems, we provide the energy required for your vision to function.",
-        image: "/services/electrical.webp",
+        image: "/services/electrical.jpg",
         reversed: true
     },
     {
