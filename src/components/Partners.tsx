@@ -6,8 +6,8 @@ import { motion, Easing } from "framer-motion";
 
 export default function Partners() {
     const { partners } = siteData;
-    // Double the items for a seamless marquee effect
-    const marqueeItems = [...partners.items, ...partners.items, ...partners.items];
+    // Quadruple the items for a seamless marquee effect
+    const marqueeItems = [...partners.items, ...partners.items, ...partners.items, ...partners.items];
 
     return (
         <section className="py-20 bg-background-dark border-y border-white/5 overflow-hidden">
@@ -29,15 +29,15 @@ export default function Partners() {
                         <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background-dark to-transparent z-10"></div>
 
                         <motion.div
-                            className="flex items-center gap-16 py-4"
+                            className="flex items-center py-4 w-max"
                             animate={{
-                                x: ["0%", "-33.33%"]
+                                x: ["0%", "-25%"]
                             }}
                             transition={{
                                 x: {
                                     repeat: Infinity,
                                     repeatType: "loop",
-                                    duration: 30,
+                                    duration: 40,
                                     ease: "linear" as Easing,
                                 },
                             }}
@@ -45,19 +45,19 @@ export default function Partners() {
                             {marqueeItems.map((partner: any, idx) => (
                                 <div
                                     key={`${partner.name}-${idx}`}
-                                    className="flex items-center gap-6 transition-all duration-500 cursor-pointer group flex-shrink-0"
+                                    className="flex items-center pr-4 transition-all duration-500 cursor-pointer group flex-shrink-0"
                                 >
-                                    <div className="bg-white rounded-xl p-4 h-20 w-40 flex items-center justify-center shadow-lg shadow-black/10 transition-transform group-hover:scale-105">
+                                    <div className="rounded-xl p-4 h-32 w-64 flex items-center justify-center transition-transform group-hover:scale-105">
                                         {partner.image ? (
                                             <img
                                                 src={partner.image}
                                                 alt={partner.name}
-                                                className="h-full w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                                                className="h-full w-full object-contain"
                                             />
                                         ) : partner.icon ? (
-                                            <span className="material-symbols-outlined text-3xl text-gray-900">{partner.icon}</span>
+                                            <span className="material-symbols-outlined text-3xl text-white">{partner.icon}</span>
                                         ) : (
-                                            <span className="text-xs font-black tracking-widest text-gray-900 uppercase">{partner.text}</span>
+                                            <span className="text-xs font-black tracking-widest text-white uppercase">{partner.text}</span>
                                         )}
                                     </div>
                                 </div>
