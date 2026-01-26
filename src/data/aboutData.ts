@@ -77,7 +77,7 @@ export const aboutData = {
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAaFAiPdtBWeN26aLj7Q0JuMAO0qV85I6S2clQbIBR6_z7Qhfzd_gdBXVGkt8e59NwComLwlukjSIpGb70kJZJIv2rqavyW139VXZ9hl6WgRMzX5VEZx2yrWqYwp80nY03CeWJp3Oyxe1bZM_oBIjQpG6WUzG1N-x_Ks4syY8dF0kdYi3iX_bc6dEn_C0c5ocuw7q_oeyIJ9cHJA5KDsverDvD-_8Jx7MNrl6qupsiNGlEY2pZq9SlTj4D-WFK8qymQTMkqEW0-Mew"
     },
     team: {
-        badge: "Our Complete 41-Member Team",
+        badge: "Our Complete Team",
         title: "Leadership & Expertise",
         executive: {
             name: "Marito Mabunda",

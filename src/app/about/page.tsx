@@ -211,7 +211,6 @@ export default function AboutPage() {
                                 </div>
                                 <div>
                                     <p className="text-white font-semibold text-base">{aboutData.team.executive.name}</p>
-                                    <p className="text-muted-dark text-[10px] font-light uppercase tracking-wider">{aboutData.team.executive.role}</p>
                                 </div>
                             </div>
                         </div>
@@ -226,8 +225,6 @@ export default function AboutPage() {
                                     {division.members.map((member, j) => (
                                         <div key={j}>
                                             <p className="text-white font-medium text-sm">{member.name}</p>
-                                            <p className="text-muted-dark text-[11px] font-light uppercase">{member.role}</p>
-                                            {/* Optional separator after lead roles but too messy here */}
                                         </div>
                                     ))}
                                 </div>

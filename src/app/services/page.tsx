@@ -53,7 +53,7 @@ const services = [
         tag: "The Culture",
         title: "Occupational Health and Safety",
         description: "Safety is not a checkbox; it's a commitment. We integrate comprehensive OHS protocols into every project stage. Our specialists ensure full compliance with regulatory standards, protecting the most valuable asset on any construction site: the people.",
-        image: "/services/ohs.webp",
+        image: "/services/ohs.jpg",
         reversed: false
     }
 ];
