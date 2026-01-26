@@ -21,7 +21,7 @@ export const aboutData = {
             { value: "2+", label: "Regional Offices" }
         ],
         quote: "Precision in every detail, excellence in every project.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCP8Fetvq1JqB92db8WeFgGKtwqtYJb9QzWbVUApopQ-4wR_8dgMv9IYh8_AJEZTtUJUrPLysJTvB7Vae0I3XZtE6YhlLzgMYFKmCZu9UHpbjVAkbyM1Rp9mJkVqW1ZQgFAxK9RU2QfPFnjCnoqJJ1B2zHaTG501CQH28nvU9PiSHhE1YBaI7sKZC-n_2CjQYj9JeiIWDNhOA8Naef8nKiNPTPFoGOA835MybWviHlMGnuupwkr_EXWdVnEllkykVommBeJW7dTPcs"
+        image: "/about-excellence.jpg"
     },
     pillars: {
         badge: "Our Strategic Foundation",
