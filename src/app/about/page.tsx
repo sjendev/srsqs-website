@@ -79,7 +79,7 @@ export default function AboutPage() {
                             <div className="relative group">
                                 <img
                                     alt="Modern Architecture"
-                                    className="w-full aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                    className="w-full aspect-square object-cover transition-all duration-700"
                                     src={aboutData.excellence.image}
                                 />
                                 <div className="absolute -bottom-6 -left-6 bg-primary p-8 hidden md:block">
