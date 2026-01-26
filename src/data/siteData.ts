@@ -52,7 +52,7 @@ export const siteData = {
                     {
                         title: "Architecture",
                         category: "Design & Planning",
-                        image: "/services/architecture.webp",
+                        image: "/services/architecture.jpg",
                         cta: "Explore Service",
                         href: "/services"
                     },

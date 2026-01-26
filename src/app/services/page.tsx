@@ -18,7 +18,7 @@ const services = [
         tag: "The Vision",
         title: "Architecture",
         description: "Where form meets function. Our architectural team crafts innovative spaces that respond to their environment and the people who inhabit them. We bridge the gap between aesthetic ambition and commercial reality, delivering designs that are as buildable as they are beautiful.",
-        image: "/services/architecture.webp",
+        image: "/services/architecture.jpg",
         reversed: true
     },
     {
