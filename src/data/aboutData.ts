@@ -20,7 +20,7 @@ export const aboutData = {
             { value: "100%", label: "Black Owned" },
             { value: "2+", label: "Regional Offices" }
         ],
-        quote: "Precision in every detail, excellence in every project.",
+        quote: "trusted by industry leaders",
         image: "/about-excellence.jpg"
     },
     pillars: {
